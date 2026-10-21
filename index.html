@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick's Kitchen - ASM Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 1. TOP BANNER -->
+    <div class="top-banner">
+        Subscribe to my weekly newsletter for FREE recipes!
+    </div>
+
+    <!-- 2. NAVBAR CHI TIẾT (DÙNG CHECKBOX HACK) -->
+    <nav class="navbar">
+        <a href="#" class="logo">NICK'S KITCHEN</a>
+
+        <!-- Checkbox ẩn dùng để điều khiển menu trên điện thoại -->
+        <input type="checkbox" id="menu-bar" style="display: none;">
+
+        <ul class="nav-links">
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Subscribe</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <i class="fas fa-search search-desktop"></i>
+            <div class="mobile-icons">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fas fa-search"></i>
+                <label for="menu-bar" class="menu-toggle">
+                    <i class="fas fa-bars"></i> MENU
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. HERO VIDEO BANNER -->
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <!-- Đảm bảo đường dẫn video của bạn ở đây là đúng -->
+            <source src="asm/image/gemini_generated_video_1699e9f3.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h3 class="hero-subtitle">Welcome to</h3>
+            <h1 class="hero-title">NICK'S KITCHEN</h1>
+            <a href="recipe.html" class="btn">BẮT ĐẦU NẤU</a>
+        </div>
+    </header>
+
+    <!-- 4. KHU VỰC TÍNH NĂNG (FEATURES) -->
+    <section class="features section-padding">
+        <div class="feature-item">
+            <h4>Nguyên Liệu Tươi</h4>
+            <p>Luôn ưu tiên những thực phẩm tươi ngon nhất để đảm bảo hương vị bùng nổ.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Công Thức Độc Quyền</h4>
+            <p>Những bí quyết nấu ăn được tinh chỉnh qua hàng ngàn lần thử nghiệm thực tế.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Dễ Dàng Thực Hiện</h4>
+            <p>Các bước hướng dẫn chi tiết, ai cũng có thể làm đầu bếp 5 sao tại nhà.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Cộng Đồng Lớn</h4>
+            <p>Tham gia cùng hàng triệu người yêu ẩm thực trên toàn thế giới.</p>
+        </div>
+    </section>
+
+    <!-- 5. DANH SÁCH MÓN ĂN (RECIPES) -->
+    <section class="recipes-section section-padding" id="recipes">
+        <div class="section-header">
+            <h3>Check Out</h3>
+            <h2>CÁC MÓN ĂN NỔI BẬT</h2>
+        </div>
+
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80"
+                    alt="Bò Wellington" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Bò Wellington</h3>
+                    <p class="recipe-desc">Thăn bò Wagyu bọc trong nấm duxelles đậm đà và vỏ bánh ngàn lớp xốp giòn rụm.
+                    </p>
+                    <a href="recipe.html" class="btn btn-recipe">XEM CÔNG THỨC</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80"
+                    alt="Gà Rán" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Gà Rán Giòn Siêu Cấp</h3>
+                    <p class="recipe-desc">Miếng gà rập rạp gia vị, áo qua lớp bột đặc biệt và chiên ngập dầu giòn tan
+                        đã tai.</p>
+                    <a href="#" class="btn btn-recipe">XEM CÔNG THỨC</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80"
+                    alt="Bánh quy Socola" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Bánh Quy Socola Chảy</h3>
+                    <p class="recipe-desc">Vỏ bánh giòn xốp, bên trong ẩm mềm với những viên socola tan chảy ngọt ngào.
+                    </p>
+                    <a href="#" class="btn btn-recipe">XEM CÔNG THỨC</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+                    alt="Bánh mì kẹp" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Bánh Mì Kẹp Phô Mai</h3>
+                    <p class="recipe-desc">Ba loại phô mai tan chảy và bánh mì nướng bơ tỏi giòn rụm, đơn giản nhưng

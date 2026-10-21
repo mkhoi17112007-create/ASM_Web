@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Open+Sans:wght@400;600;700&display=swap');
+
+/* =======================================
+   1. CÀI ĐẶT GỐC
+   ======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.section-padding {
+    padding: 80px 5%;
+}
+
+/* =======================================
+   2. THANH THÔNG BÁO & NAVBAR
+   ======================================= */
+.top-banner {
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #cc0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* ===== BIẾN MENU THÀNH NGĂN KÉO TRƯỢT TỪ BÊN PHẢI ===== */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* Cố định vào màn hình */
+    top: 0;
+    right: -100%;
+    /* Giấu hoàn toàn sang bên phải */
+    width: 80%;
+    /* Chiều rộng chiếm 80% màn hình điện thoại */
+    max-width: 400px;
+    height: 100vh;
+    /* Cao bằng 100% màn hình */
+    background-color: #ffffff;
+    /* Nền trắng giống ảnh */
+    padding: 80px 40px;
+    /* Cách lề trên và lề trái */
+    text-align: left;
+    /* Căn trái toàn bộ chữ */
+    transition: right 0.4s ease;
+    /* Hiệu ứng trượt trơn tru 0.4 giây */
+    z-index: 9999;
+    /* Tạo lớp phủ màu đen mờ cho phần màn hình còn lại */
+    box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
+}
+
+/* Chỉnh chữ bên trong Menu giống ảnh */
+.nav-links a {
+    color: #000000;
+    /* Chữ màu đen */
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+    /* Chữ thường, chỉ viết hoa chữ cái đầu */
+    margin-bottom: 25px;
+    /* Khoảng cách thưa ra giữa các dòng */
+}
+
+/* Nút Tắt (X) hình tròn đen giống ảnh */
+.close-menu {
+    display: flex;
+    /* Bật lại hiển thị trên điện thoại */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* KHI CHECKBOX ĐƯỢC TICK -> Kéo menu từ phải (-100%) vào trong màn hình (0) */
+#menu-bar:checked~.nav-links {
+    right: 0;
+}
+
+.nav-links a:hover {
+    color: #cc0000;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-desktop {
+    background-color: #cc0000;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mobile-icons {
+    display: none;
+}
+
+/* Responsive Menu Điện Thoại */
+@media (max-width: 992px) {
+
+    /* Ép nút tìm kiếm đỏ của máy tính phải ẩn đi hoàn toàn */
+    .search-desktop,
+    .search-btn-desktop {
+        display: none !important;
+    }
+
+    .navbar {
+        background-color: #233e30;
+    }
+
+    .logo {
+        color: #ffffff;
+        font-size: 22px;
+    }
+
+    .search-desktop {
+        display: none;
+    }
+
+    .mobile-icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: #ffffff;
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 70%;
+        width: 100%;
+        background-color: #233e30;
+        padding: 10px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a {
+        color: #ffffff;
+    }
+
+    /* Checkbox Hack: Mở menu khi tick */
+    #menu-bar:checked~.nav-links {
+        display: flex;
+    }
+}
+
+/* =======================================
+   3. HERO VIDEO BANNER
+   ======================================= */
+.hero {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-subtitle {
+    color: #cc0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #cc0000;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #cc0000;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* =======================================
+   4. FEATURES & RECIPES (BỐ CỤC CHUẨN)
+   ======================================= */
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: #ffffff;
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1;
+}
+
+.feature-item h4 {
+    color: #cc0000;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 15px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h3 {
+    color: #cc0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.recipe-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.recipe-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.btn-recipe {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+.btn-recipe:hover {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+}
+
+/* =======================================
+   5. FOOTER
+   ======================================= */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 5% 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-logo {
+    color: #cc0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #cc0000;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+
+/* Ẩn nút Tắt (X) trên màn hình máy tính */
+.close-menu {
+    display: none;
+}
+
+/* Responsive nhỏ hơn nữa */
+@media (max-width: 768px) {
+
+    .features,
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
